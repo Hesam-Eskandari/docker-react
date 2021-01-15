@@ -9,3 +9,10 @@ before_install:
 script:
   - docker run -e CI=true hesam/docker-react npm run test
 
+deploy: 
+  provider: elasticbeanstalk
+  region: "us-east-2" 
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-884736146918"
+  bucket_path: "docker-react"
